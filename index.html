@@ -1,37 +1,174 @@
-3D4you
-Cómo funciona Haz tu encargo
-Tu idea. En 3D.
-En 3D4you creamos e imprimimos objetos personalizados según lo que tú necesitas.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D4you | Impresión 3D por encargo</title>
+  <style>
+    :root {
+      --primary: #6d4aff;
+      --secondary: #11c5b5;
+      --dark: #111827;
+      --light: #f7f8fc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+    }
+    nav {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:18px 8%; background:white; position:sticky; top:0;
+      box-shadow:0 2px 12px #0001; z-index:10;
+    }
+    .logo { font-size:28px; font-weight:800; color:var(--primary); }
+    nav a { color:var(--dark); text-decoration:none; margin-left:20px; font-weight:700; }
+    .hero {
+      min-height:72vh; display:grid; place-items:center; text-align:center;
+      padding:60px 20px;
+      background:linear-gradient(135deg,#ede9ff,#e9fffb);
+    }
+    h1 { font-size:clamp(42px,8vw,82px); margin:0; }
+    .hero p { font-size:20px; max-width:680px; margin:20px auto 30px; }
+    .btn {
+      display:inline-block; background:var(--primary); color:white; padding:15px 24px;
+      border-radius:12px; text-decoration:none; font-weight:800; border:none; cursor:pointer;
+      font-size:16px;
+    }
+    .btn:hover { transform:translateY(-2px); }
+    section { padding:70px 8%; }
+    h2 { text-align:center; font-size:34px; margin-top:0; }
+    .steps, .cards {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1050px; margin:auto;
+    }
+    .card {
+      background:white; padding:28px; border-radius:18px; box-shadow:0 8px 30px #0000000d;
+    }
+    .number {
+      width:42px; height:42px; display:grid; place-items:center; border-radius:50%;
+      background:var(--primary); color:white; font-weight:800; margin-bottom:15px;
+    }
+    .form-wrap {
+      max-width:750px; margin:auto; background:white; padding:30px; border-radius:20px;
+      box-shadow:0 8px 30px #00000012;
+    }
+    label { display:block; margin:16px 0 7px; font-weight:700; }
+    input, textarea, select {
+      width:100%; padding:14px; border:1px solid #d8dce8; border-radius:10px; font:inherit;
+    }
+    textarea { min-height:150px; resize:vertical; }
+    .note { font-size:13px; color:#64748b; margin-top:10px; }
+    footer { text-align:center; padding:28px; background:var(--dark); color:white; }
+    @media (max-width:700px) {
+      nav { padding:15px 5%; }
+      nav .links { display:none; }
+      .steps, .cards { grid-template-columns:1fr; }
+      section { padding:55px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">3D4you</div>
+    <div class="links">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#encargo">Haz tu encargo</a>
+    </div>
+  </nav>
 
-Haz tu encargo por WhatsApp
-¿Cómo funciona?
-1
-Cuéntanos tu idea
-Explícanos qué objeto quieres, para qué sirve y cómo te gustaría que fuera.
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Tu idea. En 3D.</h1>
+        <p>En <b>3D4you</b> creamos e imprimimos objetos personalizados según lo que tú necesitas.</p>
+        <a class="btn" href="#encargo">Haz tu encargo por WhatsApp</a>
+      </div>
+    </section>
 
-2
-Lo preparamos
-Diseñamos o adaptamos el modelo y te ayudamos a definir tamaño, color y detalles.
+    <section id="como-funciona">
+      <h2>¿Cómo funciona?</h2>
+      <div class="steps">
+        <div class="card">
+          <div class="number">1</div>
+          <h3>Cuéntanos tu idea</h3>
+          <p>Explícanos qué objeto quieres, para qué sirve y cómo te gustaría que fuera.</p>
+        </div>
+        <div class="card">
+          <div class="number">2</div>
+          <h3>Lo preparamos</h3>
+          <p>Diseñamos o adaptamos el modelo y te ayudamos a definir tamaño, color y detalles.</p>
+        </div>
+        <div class="card">
+          <div class="number">3</div>
+          <h3>Lo imprimimos</h3>
+          <p>Una vez acordado el encargo, fabricamos tu objeto con impresión 3D.</p>
+        </div>
+      </div>
+    </section>
 
-3
-Lo imprimimos
-Una vez acordado el encargo, fabricamos tu objeto con impresión 3D.
+    <section id="encargo">
+      <h2>Haz tu encargo</h2>
+      <div class="form-wrap">
+        <form id="orderForm">
+          <label for="name">Tu nombre</label>
+          <input id="name" required placeholder="Ejemplo: Juan">
 
-Haz tu encargo
-Tu nombre
-Ejemplo: Juan
-¿Qué quieres?
-Ejemplo: un soporte para móvil
-Tamaño aproximado
-Ejemplo: 15 cm de alto
-Color
-Ejemplo: negro y rojo
-Explícanos tu idea
-Cuéntanos todos los detalles que quieras...
+          <label for="product">¿Qué quieres?</label>
+          <input id="product" required placeholder="Ejemplo: un soporte para móvil">
 
-Tu teléfono (opcional)
-Para poder responderte
- Enviar pedido por WhatsApp
-Al pulsar el botón se abrirá WhatsApp con tu pedido preparado para enviarlo.
+          <label for="size">Tamaño aproximado</label>
+          <input id="size" placeholder="Ejemplo: 15 cm de alto">
 
-© 2026 3D4you · Impresión 3D personalizada
+          <label for="color">Color</label>
+          <input id="color" placeholder="Ejemplo: negro y rojo">
+
+          <label for="details">Explícanos tu idea</label>
+          <textarea id="details" required placeholder="Cuéntanos todos los detalles que quieras..."></textarea>
+
+          <label for="contact">Tu teléfono (opcional)</label>
+          <input id="contact" type="tel" placeholder="Para poder responderte">
+
+          <button class="btn" type="submit">Enviar pedido por WhatsApp</button>
+          <p class="note">Al pulsar el botón se abrirá WhatsApp con tu pedido preparado para enviarlo.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 3D4you · Impresión 3D personalizada</footer>
+
+  <script>
+    // CAMBIA ESTE NÚMERO POR TU NÚMERO DE WHATSAPP CON PREFIJO DE PAÍS.
+    // Ejemplo España: 34600000000
+    const WHATSAPP_NUMBER = "34600000000";
+
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const product = document.getElementById("product").value;
+      const size = document.getElementById("size").value || "No especificado";
+      const color = document.getElementById("color").value || "No especificado";
+      const details = document.getElementById("details").value;
+      const contact = document.getElementById("contact").value || "No indicado";
+
+      const message =
+`Hola, quiero hacer un encargo en 3D4you.
+
+👤 Nombre: ${name}
+📦 Quiero: ${product}
+📏 Tamaño: ${size}
+🎨 Color: ${color}
+📝 Detalles: ${details}
+📱 Mi teléfono: ${contact}`;
+
+      window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
+        "_blank"
+      );
+    });
+  </script>
+</body>
+</html>
