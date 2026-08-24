@@ -1,179 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D4you | Impresión 3D por encargo</title>
-  <style>
-    :root {
-      --primary: #6d4aff;
-      --secondary: #11c5b5;
-      --dark: #111827;
-      --light: #f7f8fc;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--dark);
-      background: var(--light);
-    }
-    nav {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:18px 8%; background:white; position:sticky; top:0;
-      box-shadow:0 2px 12px #0001; z-index:10;
-    }
-    .logo { font-size:28px; font-weight:800; color:var(--primary); }
-    nav a { color:var(--dark); text-decoration:none; margin-left:20px; font-weight:700; }
-    .hero {
-      min-height:72vh; display:grid; place-items:center; text-align:center;
-      padding:60px 20px;
-      background:linear-gradient(135deg,#ede9ff,#e9fffb);
-    }
-    h1 { font-size:clamp(42px,8vw,82px); margin:0; }
-    .hero p { font-size:20px; max-width:680px; margin:20px auto 30px; }
-    .btn {
-      display:inline-block; background:var(--primary); color:white; padding:15px 24px;
-      border-radius:12px; text-decoration:none; font-weight:800; border:none; cursor:pointer;
-      font-size:16px;
-    }
-    .btn:hover { transform:translateY(-2px); }
-    section { padding:70px 8%; }
-    h2 { text-align:center; font-size:34px; margin-top:0; }
-    .steps, .cards {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1050px; margin:auto;
-    }
-    .card {
-      background:white; padding:28px; border-radius:18px; box-shadow:0 8px 30px #0000000d;
-    }
-    .number {
-      width:42px; height:42px; display:grid; place-items:center; border-radius:50%;
-      background:var(--primary); color:white; font-weight:800; margin-bottom:15px;
-    }
-    .form-wrap {
-      max-width:750px; margin:auto; background:white; padding:30px; border-radius:20px;
-      box-shadow:0 8px 30px #00000012;
-    }
-    label { display:block; margin:16px 0 7px; font-weight:700; }
-    input, textarea, select {
-      width:100%; padding:14px; border:1px solid #d8dce8; border-radius:10px; font:inherit;
-    }
-    textarea { min-height:150px; resize:vertical; }
-    .note { font-size:13px; color:#64748b; margin-top:10px; }
-    footer { text-align:center; padding:28px; background:var(--dark); color:white; }
-    @media (max-width:700px) {
-      nav { padding:15px 5%; }
-      nav .links { display:none; }
-      .steps, .cards { grid-template-columns:1fr; }
-      section { padding:55px 6%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D4You - Impresión 3D</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 50px;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        nav {
+            background-color: #222;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #a855f7;
+        }
+
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #6a11cb;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .producto {
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f7f2ff;
+            border-radius: 15px;
+        }
+
+        .producto h3 {
+            color: #6a11cb;
+        }
+
+        .precios {
+            text-align: center;
+            background: linear-gradient(135deg, #fff4d6, #ffe6a6);
+        }
+
+        .precio-grande {
+            font-size: 50px;
+            font-weight: bold;
+            color: #d97706;
+            margin: 20px 0;
+        }
+
+        .formulario {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4c0d91;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <nav>
-    <div class="logo">3D4you</div>
-    <div class="links">
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#encargo">Haz tu encargo</a>
-    </div>
-  </nav>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1>Tu idea. En 3D.</h1>
-        <p>En <b>3D4you</b> creamos e imprimimos objetos personalizados según lo que tú necesitas.</p>
-        <a class="btn" href="#encargo">Haz tu encargo por WhatsApp</a>
-      </div>
+<header>
+    <h1>🖨️ 3D4You</h1>
+    <p>Productos personalizados creados con impresión 3D</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#precios">Precios</a>
+    <a href="#pedido">Haz tu pedido</a>
+</nav>
+
+<div class="contenedor">
+
+    <section id="inicio">
+        <h2>Bienvenido a 3D4You</h2>
+        <p style="text-align: center;">
+            Creamos productos personalizados mediante impresión 3D.
+            Puedes pedir llaveros, figuras, accesorios y muchos otros diseños.
+        </p>
     </section>
 
-    <section id="como-funciona">
-      <h2>¿Cómo funciona?</h2>
-      <div class="steps">
-        <div class="card">
-          <div class="number">1</div>
-          <h3>Cuéntanos tu idea</h3>
-          <p>Explícanos qué objeto quieres, para qué sirve y cómo te gustaría que fuera.</p>
+    <section id="productos">
+        <h2>Algunos productos</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+                <h3>🔑 Llaveros personalizados</h3>
+                <p>Llaveros con nombres, diseños o textos personalizados.</p>
+            </div>
+
+            <div class="producto">
+                <h3>🎮 Accesorios</h3>
+                <p>Soportes, accesorios y objetos personalizados.</p>
+            </div>
+
+            <div class="producto">
+                <h3>🎨 Diseños personalizados</h3>
+                <p>Cuéntanos tu idea e intentaremos crearla en 3D.</p>
+            </div>
+
         </div>
-        <div class="card">
-          <div class="number">2</div>
-          <h3>Lo preparamos</h3>
-          <p>Diseñamos o adaptamos el modelo y te ayudamos a definir tamaño, color y detalles.</p>
-        </div>
-        <div class="card">
-          <div class="number">3</div>
-          <h3>Lo imprimimos</h3>
-          <p>Una vez acordado el encargo, fabricamos tu objeto con impresión 3D.</p>
-        </div>
-      </div>
     </section>
 
-    <section id="encargo">
-      <h2>Haz tu encargo</h2>
-      <div class="form-wrap">
-        <form id="orderForm">
-          <label for="name">Tu nombre</label>
-          <input id="name" required placeholder="Ejemplo: Juan">
+    <section id="precios" class="precios">
+        <h2>💰 Precios</h2>
 
-          <label for="product">¿Qué quieres?</label>
-          <input id="product" required placeholder="Ejemplo: un soporte para móvil">
+        <div class="precio-grande">
+            2 € – 15 €
+        </div>
 
-          <label for="size">Tamaño aproximado</label>
-          <input id="size" placeholder="Ejemplo: 15 cm de alto">
+        <p style="font-size: 19px;">
+            Los precios varían desde <strong>2 € hasta 15 €</strong>
+            dependiendo del tipo de pedido, el tamaño y la complejidad del diseño.
+        </p>
 
-          <label for="color">Color</label>
-          <input id="color" placeholder="Ejemplo: negro y rojo">
-
-          <label for="details">Explícanos tu idea</label>
-          <textarea id="details" required placeholder="Cuéntanos todos los detalles que quieras..."></textarea>
-
-          <label for="contact">Tu teléfono (opcional)</label>
-          <input id="contact" type="tel" placeholder="Para poder responderte">
-
-          <button class="btn" type="submit">Enviar pedido por WhatsApp</button>
-          <p class="note">Al pulsar el botón se abrirá WhatsApp con tu pedido preparado para enviarlo.</p>
-        </form>
-      </div>
+        <p>
+            Cada pedido puede ser diferente y te informaremos del precio antes de realizarlo.
+        </p>
     </section>
-  </main>
 
-  <footer>© 2026 3D4you · Impresión 3D personalizada</footer>
+    <section id="pedido">
+        <h2>📝 Haz tu pedido</h2>
 
-  <script>
-    // CAMBIA ESTE NÚMERO POR TU NÚMERO DE WHATSAPP CON PREFIJO DE PAÍS.
-    // Ejemplo España: 34600000000
-    const WHATSAPP_NUMBER = "34646648671
-      ";
+        <div class="formulario">
 
-    document.getElementById("orderForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+            <label>Tu nombre:</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre">
 
-      const name = document.getElementById("name").value;
-      const product = document.getElementById("product").value;
-      const size = document.getElementById("size").value || "No especificado";
-      const color = document.getElementById("color").value || "No especificado";
-      const details = document.getElementById("details").value;
-      const contact = document.getElementById("contact").value || "No indicado";
-<section class="precios">
-  <h2>💰 Precios</h2>
-  <p><strong>Los precios varían de 2 € a 15 €</strong> según el tipo de producto, tamaño y características del pedido.</p>
-  <p>📦 Cada pedido se valorará según lo que necesites.</p>
-</section>
-      const message =
-`Hola, quiero hacer un encargo en 3D4you.
+            <label>¿Qué quieres pedir?</label>
+            <select id="producto">
+                <option>Llaveros personalizados</option>
+                <option>Figura 3D</option>
+                <option>Accesorio</option>
+                <option>Otro producto</option>
+            </select>
 
-👤 Nombre: ${name}
-📦 Quiero: ${product}
-📏 Tamaño: ${size}
-🎨 Color: ${color}
-📝 Detalles: ${details}
-📱 Mi teléfono: ${contact}`;
+            <label>Describe tu pedido:</label>
+            <textarea id="pedidoTexto" rows="5" placeholder="Ejemplo: Quiero un llavero con el nombre Mario de 6 cm"></textarea>
 
-      window.open(
-        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
-        "_blank"
-      );
-    });
-  </script>
+            <button onclick="hacerPedido()">Enviar pedido</button>
+
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 3D4You - Impresión 3D personalizada</p>
+</footer>
+
+<script>
+function hacerPedido() {
+    const nombre = document.getElementById("nombre").value;
+    const producto = document.getElementById("producto").value;
+    const pedido = document.getElementById("pedidoTexto").value;
+
+    if (nombre === "" || pedido === "") {
+        alert("Por favor, completa tu nombre y describe tu pedido.");
+        return;
+    }
+
+    alert(
+        "¡Pedido enviado!\n\n" +
+        "Nombre: " + nombre + "\n" +
+        "Producto: " + producto + "\n" +
+        "Pedido: " + pedido + "\n\n" +
+        "Nos pondremos en contacto contigo para confirmar el precio."
+    );
+}
+</script>
+
 </body>
 </html>
