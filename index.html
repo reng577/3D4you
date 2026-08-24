@@ -1,162 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D4You - Impresión 3D</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>3D4You - Impresión 3D Personalizada</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #222;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 50px;
-        }
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
 
-        header p {
-            font-size: 20px;
-            margin-top: 15px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 48px;
+}
 
-        nav {
-            background-color: #222;
-            text-align: center;
-            padding: 15px;
-        }
+header p {
+    color: #ddd;
+    font-size: 18px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav {
+    background: #222;
+    text-align: center;
+    padding: 15px;
+}
 
-        nav a:hover {
-            color: #a855f7;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
 
-        .contenedor {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+nav a:hover {
+    color: #00d4ff;
+}
 
-        section {
-            background: white;
-            margin-bottom: 30px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
 
-        h2 {
-            color: #6a11cb;
-            text-align: center;
-            font-size: 30px;
-        }
+h2 {
+    font-size: 32px;
+}
 
-        .productos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
 
-        .producto {
-            width: 250px;
-            padding: 20px;
-            text-align: center;
-            background-color: #f7f2ff;
-            border-radius: 15px;
-        }
+.producto {
+    background: white;
+    padding: 25px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
 
-        .producto h3 {
-            color: #6a11cb;
-        }
+.producto h3 {
+    margin-top: 0;
+}
 
-        .precios {
-            text-align: center;
-            background: linear-gradient(135deg, #fff4d6, #ffe6a6);
-        }
+#precios {
+    background: #eafaff;
+}
 
-        .precio-grande {
-            font-size: 50px;
-            font-weight: bold;
-            color: #d97706;
-            margin: 20px 0;
-        }
+.precio-destacado {
+    background: #111;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 25px auto;
+}
 
-        .formulario {
-            max-width: 600px;
-            margin: auto;
-        }
+.precio-destacado h3 {
+    font-size: 42px;
+    margin: 10px 0;
+}
 
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+form {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
 
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #6a11cb;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
 
-        button:hover {
-            background-color: #4c0d91;
-        }
+button {
+    width: 100%;
+    padding: 14px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+}
 
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+button:hover {
+    background: #00aacc;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 38px;
-            }
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-            nav a {
-                display: inline-block;
-                margin: 8px;
-            }
-        }
-    </style>
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 36px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<header id="inicio">
     <h1>🖨️ 3D4You</h1>
-    <p>Productos personalizados creados con impresión 3D</p>
+    <p>Diseños y productos personalizados creados con impresión 3D</p>
 </header>
 
 <nav>
@@ -166,103 +159,88 @@
     <a href="#pedido">Haz tu pedido</a>
 </nav>
 
-<div class="contenedor">
+<section id="productos">
+    <h2>Productos personalizados</h2>
 
-    <section id="inicio">
-        <h2>Bienvenido a 3D4You</h2>
-        <p style="text-align: center;">
-            Creamos productos personalizados mediante impresión 3D.
-            Puedes pedir llaveros, figuras, accesorios y muchos otros diseños.
-        </p>
-    </section>
+    <div class="productos">
 
-    <section id="productos">
-        <h2>Algunos productos</h2>
-
-        <div class="productos">
-
-            <div class="producto">
-                <h3>🔑 Llaveros personalizados</h3>
-                <p>Llaveros con nombres, diseños o textos personalizados.</p>
-            </div>
-
-            <div class="producto">
-                <h3>🎮 Accesorios</h3>
-                <p>Soportes, accesorios y objetos personalizados.</p>
-            </div>
-
-            <div class="producto">
-                <h3>🎨 Diseños personalizados</h3>
-                <p>Cuéntanos tu idea e intentaremos crearla en 3D.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="precios" class="precios">
-        <h2>💰 Precios</h2>
-
-        <div class="precio-grande">
-            2 € – 15 €
+        <div class="producto">
+            <h3>🔑 Llaveros</h3>
+            <p>Llaveros personalizados con nombres, diseños y formas diferentes.</p>
         </div>
 
-        <p style="font-size: 19px;">
-            Los precios varían desde <strong>2 € hasta 15 €</strong>
-            dependiendo del tipo de pedido, el tamaño y la complejidad del diseño.
-        </p>
-
-        <p>
-            Cada pedido puede ser diferente y te informaremos del precio antes de realizarlo.
-        </p>
-    </section>
-
-    <section id="pedido">
-        <h2>📝 Haz tu pedido</h2>
-
-        <div class="formulario">
-
-            <label>Tu nombre:</label>
-            <input type="text" id="nombre" placeholder="Escribe tu nombre">
-
-            <label>¿Qué quieres pedir?</label>
-            <select id="producto">
-                <option>Llaveros personalizados</option>
-                <option>Figura 3D</option>
-                <option>Accesorio</option>
-                <option>Otro producto</option>
-            </select>
-
-            <label>Describe tu pedido:</label>
-            <textarea id="pedidoTexto" rows="5" placeholder="Ejemplo: Quiero un llavero con el nombre Mario de 6 cm"></textarea>
-
-            <button onclick="hacerPedido()">Enviar pedido</button>
-
+        <div class="producto">
+            <h3>🎮 Accesorios</h3>
+            <p>Accesorios y soportes creados con impresión 3D.</p>
         </div>
-    </section>
 
-</div>
+        <div class="producto">
+            <h3>🎨 Diseños a medida</h3>
+            <p>Cuéntame tu idea y crearé un producto personalizado para ti.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="precios">
+
+    <h2>💰 Precios</h2>
+
+    <p>
+        Todos los pedidos son diferentes, por eso el precio puede variar.
+    </p>
+
+    <div class="precio-destacado">
+        <p>Precios desde</p>
+        <h3>2 € – 15 €</h3>
+        <p>Dependiendo del pedido</p>
+    </div>
+
+    <p>
+        El precio final depende del tamaño, la cantidad de material
+        y la complejidad del diseño.
+    </p>
+
+</section>
+
+<section id="pedido">
+
+    <h2>📝 Haz tu pedido</h2>
+
+    <p>Rellena el formulario y describe lo que quieres imprimir.</p>
+
+    <form onsubmit="enviarPedido(event)">
+
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+        <input type="text" id="pedido" placeholder="¿Qué quieres pedir?" required>
+
+        <textarea id="descripcion" rows="5" placeholder="Describe tu pedido"></textarea>
+
+        <button type="submit">Enviar pedido</button>
+
+    </form>
+
+</section>
 
 <footer>
     <p>© 2026 3D4You - Impresión 3D personalizada</p>
 </footer>
 
 <script>
-function hacerPedido() {
-    const nombre = document.getElementById("nombre").value;
-    const producto = document.getElementById("producto").value;
-    const pedido = document.getElementById("pedidoTexto").value;
+function enviarPedido(event) {
+    event.preventDefault();
 
-    if (nombre === "" || pedido === "") {
-        alert("Por favor, completa tu nombre y describe tu pedido.");
-        return;
-    }
+    const nombre = document.getElementById("nombre").value;
+    const pedido = document.getElementById("pedido").value;
+    const descripcion = document.getElementById("descripcion").value;
 
     alert(
-        "¡Pedido enviado!\n\n" +
+        "¡Pedido recibido!\n\n" +
         "Nombre: " + nombre + "\n" +
-        "Producto: " + producto + "\n" +
-        "Pedido: " + pedido + "\n\n" +
-        "Nos pondremos en contacto contigo para confirmar el precio."
+        "Pedido: " + pedido + "\n" +
+        "Descripción: " + descripcion +
+        "\n\nEl precio se confirmará entre 2 € y 15 € según el pedido."
     );
 }
 </script>
