@@ -217,7 +217,7 @@ footer {
 
         <textarea id="descripcion" rows="5" placeholder="Describe tu pedido"></textarea>
 
-        <button type="submit">Enviar pedido</button>
+        <button type="submit">Enviar pedido por WhatsApp</button>
 
     </form>
 
@@ -235,13 +235,19 @@ function enviarPedido(event) {
     const pedido = document.getElementById("pedido").value;
     const descripcion = document.getElementById("descripcion").value;
 
-    alert(
-        "¡Pedido recibido!\n\n" +
-        "Nombre: " + nombre + "\n" +
-        "Pedido: " + pedido + "\n" +
-        "Descripción: " + descripcion +
-        "\n\nEl precio se confirmará entre 2 € y 15 € según el pedido."
-    );
+    const mensaje =
+        "¡Hola! Quiero hacer un pedido en 3D4You.\n\n" +
+        "👤 Nombre: " + nombre + "\n" +
+        "📦 Pedido: " + pedido + "\n" +
+        "📝 Descripción: " + descripcion;
+
+    const numeroWhatsApp = "34646648671";
+
+    const enlace =
+        "https://wa.me/" + numeroWhatsApp +
+        "?text=" + encodeURIComponent(mensaje);
+
+    window.open(enlace, "_blank");
 }
 </script>
 
